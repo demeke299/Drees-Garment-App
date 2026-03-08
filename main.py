@@ -15,7 +15,15 @@ class LoginWindow:
         self.root.configure(bg="#f4f4f4")
         
         tk.Label(root, text="DERESE GARMENT", font=("Arial", 20, "bold"), fg="#28a745", bg="#f4f4f4").pack(pady=30)
-        
+                # ሎጎውን ለማሳየት (ከመስመር 17 በታች ጨምረው)
+        try:
+            self.logo_img = tk.PhotoImage(file="garment.png")
+            self.logo_label = tk.Label(root, image=self.logo_img, bg="#f4f4f4")
+            self.logo_label.pack(pady=10)
+        except:
+            # ምስሉ ካልተገኘ ስሙን ብቻ ያሳያል
+            pass
+
         tk.Label(root, text="የተጠቃሚ ስም:", bg="#f4f4f4").pack()
         self.user_entry = tk.Entry(root, font=("Arial", 12))
         self.user_entry.pack(pady=5)
